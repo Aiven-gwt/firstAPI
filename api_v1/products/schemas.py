@@ -23,5 +23,4 @@ class ProductUpdatePartial(ProductCreate):
 
 class Product(ProductBase):
     model_config = ConfigDict(from_attributes=True)
-
     id: int

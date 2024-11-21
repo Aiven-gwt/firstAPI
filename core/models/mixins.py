@@ -17,12 +17,9 @@ class UserRelationMixin:
         return mapped_column(
             ForeignKey("users.id"),
             unique=cls._user_id_unique,
-            nullable=cls._user_id_nullable
+            nullable=cls._user_id_nullable,
         )
 
     @declared_attr
     def user(cls) -> Mapped["User"]:
-        return relationship(
-            "User",
-            back_populates=cls._user_back_populates
-        )
+        return relationship("User", back_populates=cls._user_back_populates)
